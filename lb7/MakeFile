@@ -1,0 +1,10 @@
+myenv:
+	gcc -o myenv envmain.o -L. -lmyenv
+envmain.o: lb6_main.c
+	gcc -c $^
+liblb7.a: var9lb6.o
+	ar rv $@ $^
+var9lb6.o: var9lb6.c
+	gcc -c &^
+clean:
+	rm -f myenv liblb7.a *.o
