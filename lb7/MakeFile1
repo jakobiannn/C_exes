@@ -1,0 +1,10 @@
+a.out: lb6.c
+	gcc lb6.c
+myenv: lb7foo.o libmyenv.so
+	gcc -o lb7foo.o -L. -lmyenv
+libmyenv.so: lb7foo.o
+	gcc -shared -o libmyenv.so $^
+lb7foo.o: lb6.c
+	gcc -fPIC -c $^
+clean:
+	libmyenv.so *.o
