@@ -1,0 +1,6 @@
+lb7foo.a: lb6.o
+	ar rv $@ $^
+lb6.o: lb6.c
+	gcc -c $^
+clean:
+	rm -f libfoo.a *.o

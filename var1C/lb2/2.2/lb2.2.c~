@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+	int a, b, c, d;
+
+	printf("%s\n","Write coefficient a: ");	
+	scanf("%d", &a);
+
+	printf("%s\n","Write coefficient b: ");	
+	scanf("%d", &b);
+
+	printf("%s\n","Write coefficient c: ");	
+	scanf("%d", &c);
+
+	d = b*b-4*a*c;
+
+	if (d>0) {
+		int x1 = (-b+sqrt(d))/(2*a);
+		int x2 = (-b-sqrt(d))/(2*a);
+	} else 
+		if (d == 0) {
+			int x = -b/(2*a);
+		} else {
+			printf("%s\n","	No roots ");	
+		}
+
+	return 0;
+}
+		
+
